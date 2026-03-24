@@ -13,7 +13,8 @@ public class DataInitializer {
     @Bean
     CommandLineRunner seedUsers(UserRepository users, PasswordEncoder encoder) {
         return args -> {
-            createIfAbsent(users, encoder, "Suraj", "suraj@example.com", "demo123");
+            // Match requested credentials for the pre-seeded Suraj account
+            createIfAbsent(users, encoder, "Suraj", "suraj@example.com", "123456");
             createIfAbsent(users, encoder, "Alice", "alice@example.com", "123456");
         };
     }
